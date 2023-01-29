@@ -1,23 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Input } from "./Input.js";
+import { useState } from "react";
 
 function App() {
+  const [todos, settodos] = useState([]);
+  const [inputValue, setinputValue] = useState("");
+
+  const addtodo = () => {
+    settodos(todos.concat([inputValue]));
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="enterText">
+        <input
+          type="text"
+          onInput={(e) => {
+            setinputValue(e.target.value);
+          }}
+        />
+        <button onClick={addtodo}>Add</button>
+      </div>
+
+      <ul>
+      {todos.map((todo, index) => {
+        return (
+          <li className="list">
+            <a key={index}>{todo}</a>
+            <button className="butt" onClick={(index)=>{settodos(todos.filter(item => item !== todo));}}>Delete</button>
+            <button className="butt">Modify</button>
+          </li>
+        );
+      })}
+      </ul>
+      
     </div>
   );
 }
