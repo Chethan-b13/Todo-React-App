@@ -1,31 +1,102 @@
-.App {
-  text-align: center;
+html{
+  margin: 0;
+  padding: 0;
+  background-color: #022B3A;
+  width: 100%;
+  height: 100%;
+  font-family: system-ui;
 }
 
 ul{
   list-style: none;
 }
-a{
-  text-decoration: none;
+
+.Container{
+  position: relative;
 }
 
-.list{
+.enterText{
+  display: flex;
+  justify-content: center;
+  margin: 2rem 2rem;
+  padding: 20px 10px;
+  border-radius: 8px;
+}
+
+.inputArea{
+  width: 60%;
+  height: 40px;
+  border: hidden;
+  padding: 1px 1px 1px 20px;
+  margin: 0px 15px;
+  border-radius: 10px;
+  font-size: 20px;
+  transition: all .2s ease;
+}
+
+.inputArea:focus{
+  outline: none;
+  font-size: 22px;
+  border-top: 3px solid #BFDBF7;
+}
+
+.enterText button{
+  background-color: #BFDBF7;
+  border: none;
+  border-radius: 10px;
+  height: 35px;
+  width: 45px;
+  color: #022B3A;
+  font-size: 30px;
+  align-self: center;
+}
+
+.taskArea{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.taskBox{
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: white;
+  width: auto;
+  height: 100%;
+  padding: 10px 5px 10px 15px;
   text-align: center;
+  margin: 10px 10px;
+  background-color: #1F7A8C;
+  border-radius: 0.5em ;
+  transition: all .2s ease;
 }
 
-.list a{
-  font-size: 50px;
-  color: rgb(0, 0, 0)
+.taskBox:hover{
+  margin-top: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #1b6c7c;
+}
+
+.taskBox p{
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  margin: 0;
+}
+
+.buttonwrapper{
+  margin-left: 25px;
 }
 
 .butt{
-  background-color: #f44336;
-  border: none;
+  border: hidden;
+  font-size: 15px;
   color: white;
-  margin-left: 26px;
-  padding: 10px 22px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
+  background-color: #022B3A;
+  padding: 5px 10px;
+  margin: 0px 5px 0px 5px;
+  border-radius: 10px;
 }
